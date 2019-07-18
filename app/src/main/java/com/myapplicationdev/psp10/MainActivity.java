@@ -82,14 +82,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.random) {
-            int max = vPager.getChildCount();
-            int min = vPager.getCurrentItem() -1 ;
-            Random rand = new Random();
-            int r = rand.nextInt((max - min) + 1) + min;
-            if  (vPager.getCurrentItem() == r){
-                int randomPage = vPager.getCurrentItem() ;
-                vPager.setCurrentItem(randomPage,true);
-            }
+            Random r = new Random();
+            int num = r.nextInt(3);
+            vPager.setCurrentItem(num,true);
             return true;
         }
 
